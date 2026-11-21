@@ -41,23 +41,41 @@ body{background:#f7f7f7;padding-bottom:40px}
 <div class="cats" id="cats"></div>
 <div id="list"></div>
 <script>
-const IMG={
-fresh:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300",
-mango:"https://images.unsplash.com/photo-1553279768-865429fa0078?w=300",
-avocado:"https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=300",
-cocktail:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300",
-smoothie:"https://images.unsplash.com/photo-1638176066666-ffb2f013c7dd?w=300",
-milk:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=300",
-zabado:"https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300",
-choc:"https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300",
-nuts:"https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=300",
-ice:"https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=300",
-hot:"https://images.unsplash.com/photo-1541167760496-1628856ab772?w=300",
-oriental:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300",
-diet:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300",
-feeding:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300",
-special:"https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300"
-};
+function getImg(name,cat){
+name=name.toLowerCase();
+if(name.includes("برتقال")) return "https://images.unsplash.com/photo-1557800636-894a64c1696f?w=300";
+if(name.includes("جزر")) return "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=300";
+if(name.includes("كنتالوب")) return "https://images.unsplash.com/photo-1571575173700-afb9492e6a50?w=300";
+if(name.includes("جوافة")) return "https://images.unsplash.com/photo-1581375074612-d1fd0e661aeb?w=300";
+if(name.includes("يوسفي")) return "https://images.unsplash.com/photo-1557800636-894a64c1696f?w=300";
+if(name.includes("فراولة")) return "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=300";
+if(name.includes("ليمون")) return "https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?w=300";
+if(name.includes("بطيخ")) return "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=300";
+if(name.includes("كيوي")) return "https://images.unsplash.com/photo-1581375074612-d1fd0e661aeb?w=300";
+if(name.includes("موز")) return "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300";
+if(name.includes("رمان")) return "https://images.unsplash.com/photo-1541344998736-83eca9242bc3?w=300";
+if(name.includes("تين")) return "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=300";
+if(name.includes("عنب")) return "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=300";
+if(name.includes("بلح")||name.includes("تمر")) return "https://images.unsplash.com/photo-1593904308074-e1c9f0c9f7b5?w=300";
+if(name.includes("جرجير")) return "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300";
+if(name.includes("تفاح")) return "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=300";
+if(name.includes("خوخ")) return "https://images.unsplash.com/photo-1595124245030-41448b199d6f?w=300";
+if(name.includes("أناناس")) return "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=300";
+if(name.includes("مانجو")) return "https://images.unsplash.com/photo-1553279768-865429fa0078?w=300";
+if(name.includes("أفوكادو")) return "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=300";
+if(name.includes("أوريو")||name.includes("توينكز")||name.includes("شيكولاتة")||name.includes("سنيكرز")||name.includes("كيت")) return "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300";
+if(name.includes("زبادي")||name.includes("زبادو")) return "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300";
+if(name.includes("قصب")||name.includes("سوبيا")||name.includes("كركديه")||name.includes("دوم")||name.includes("تمر هندي")) return "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300";
+if(name.includes("آيس")||name.includes("بولة")||name.includes("قنبلة")||name.includes("فخفخينا")||name.includes("موزاليتا")) return "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=300";
+if(name.includes("سحلب")||name.includes("بليلة")||name.includes("حمص")) return "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=300";
+if(name.includes("جوز")||name.includes("كاجو")||name.includes("سوداني")||name.includes("مكسرات")) return "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=300";
+if(cat==="مانجو") return "https://images.unsplash.com/photo-1553279768-865429fa0078?w=300";
+if(cat==="أفوكادو") return "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=300";
+if(cat==="كوكتيلات"||cat==="سموذي") return "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300";
+if(cat==="ميلك شيك") return "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=300";
+if(cat==="الدايت") return "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300";
+return "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300";
+}
 const DATA=[
 {cat:"عصائر فريش",key:"fresh",items:[
 ["برتقال - Oranges",[25,30,65]],
@@ -239,17 +257,3 @@ if(!items.length) return;
 let html=`<div class="section"><h2>${sec.cat}</h2>`;
 items.forEach(it=>{
 const isSingle = sec.cat==="آيس كريم و أطباق" || sec.cat==="مشروبات ساخنة";
-let priceHtml="";
-if(isSingle){ priceHtml=`<div class="prices"><div class="price"><small>السعر</small><b>${it[3]}</b></div></div>` }
-else if(sec.cat==="عصائر شرقية"){ priceHtml=`<div class="prices"><div class="price"><small>صغير</small><b>${it[3].replace('صغير ','')}</b></div><div class="price"><small>وسط</small><b>${it[1][0]}</b></div><div class="price"><small>كبير</small><b>${it[1][1]}</b></div><div class="price"><small>لتر</small><b>${it[1][2]}</b></div></div>` }
-else{ priceHtml=`<div class="prices"><div class="price"><small>وسط</small><b>${it[1][0]}</b></div><div class="price"><small>كبير</small><b>${it[1][1]}</b></div><div class="price"><small>لتر</small><b>${it[1][2]}</b></div></div>` }
-html+=`<div class="card"><div class="info"><h3>${it[0]}</h3>${priceHtml}</div><img src="${IMG[sec.key]}"></div>`;
-});
-html+=`</div>`;list.innerHTML+=html;
-});
-}
-document.getElementById('search').addEventListener('input',render);
-render();
-</script>
-</body>
-</html>
