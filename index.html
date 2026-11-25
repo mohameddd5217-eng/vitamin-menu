@@ -1,49 +1,21 @@
-<!-- سلة الطلبات + واتساب -->
-<div id="cartBar" style="position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;padding:12px;text-align:center;z-index:9999;display:none;direction:rtl">
-<div id="cartText" style="margin-bottom:8px;font-weight:bold"></div>
-<input id="custName" placeholder="اسمك" style="padding:8px;width:30%;border-radius:8px;border:none">
-<input id="custPhone" placeholder="رقم موبايلك" style="padding:8px;width:30%;border-radius:8px;border:none">
-<input id="custAddr" placeholder="العنوان" style="padding:8px;width:30%;border-radius:8px;border:none">
-<br><br>
-<button onclick="sendOrder()" style="background:#25D366;color:#fff;border:none;padding:12px 20px;border-radius:10px;font-weight:bold;font-size:16px;width:90%">تأكيد الطلب على واتساب ✅</button>
-</div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فيتامين - Vitamin</title>
+<style>body{font-family:sans-serif;background:#fff7ed;margin:0;padding-bottom:180px}header{background:#f97316;color:#fff;text-align:center;padding:20px}header h1{margin:0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}.item{background:#fff;border-radius:14px;padding:12px;text-align:center;box-shadow:0 2px 8px #0001}.item h3{margin:5px 0}.price{color:#ea580c;font-weight:bold}.item button{background:#f97316;color:#fff;border:none;padding:9px 14px;border-radius:10px;font-weight:bold;margin-top:8px;width:100%}#cartBar{position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;padding:12px;text-align:center;z-index:9999}#cartBar input{padding:9px;width:30%;border-radius:8px;border:none;margin:2px}#cartBar button{background:#25D366;color:#fff;border:none;padding:12px;border-radius:10px;font-weight:bold;width:95%;font-size:16px;margin-top:8px}</style>
+</head><body>
+<header><h1>🥤 فيتامين Vitamin</h1><p>عصائر فريش • الشيخ زايد</p></header>
+<div class="grid" id="menu"></div>
+<div id="cartBar"><div id="cartText">السلة فاضية</div><br><input id="n" placeholder="اسمك"><input id="p" placeholder="موبايلك"><input id="a" placeholder="العنوان"><br><button onclick="send()">تأكيد الطلب على واتساب ✅</button></div>
 <script>
-let cart = {};
-function getItems(){
-  return [...document.querySelectorAll('.item, .card, .product, .menu-item')];
-}
-function addBtns(){
-  getItems().forEach(el=>{
-    if(el.querySelector('.addBtn')) return;
-    let name = el.querySelector('h3,h4,.name')?.innerText || el.innerText.split('\n')[0];
-    let priceText = el.innerText.match(/(\d+)\s*(ج|جنيه|EGP)?/);
-    let price = priceText ? parseInt(priceText[1]) : 0;
-    let b = document.createElement('div');
-    b.innerHTML = `<div style="display:flex;gap:8px;justify-content:center;margin-top:8px"><button class="addBtn" style="background:#f97316;color:#fff;border:none;padding:8px 16px;border-radius:8px;font-weight:bold">+ أضف للطلب</button></div>`;
-    b.querySelector('button').onclick = ()=>{
-      cart[name] = cart[name] || {price:price, qty:0};
-      cart[name].qty++;
-      updateCart();
-    };
-    el.appendChild(b);
-  });
-}
-function updateCart(){
-  let total=0, txt='';
-  for(let k in cart){ total+=cart[k].price*cart[k].qty; txt+=cart[k].qty+'x '+k+' - '+(cart[k].price*cart[k].qty)+'ج | '; }
-  let bar=document.getElementById('cartBar');
-  if(total>0){ bar.style.display='block'; document.getElementById('cartText').innerText = txt + ' | الاجمالي: '+total+' ج'; }
-  else bar.style.display='none';
-}
-function sendOrder(){
-  let name=document.getElementById('custName').value||'بدون اسم';
-  let phone=document.getElementById('custPhone').value||'---';
-  let addr=document.getElementById('custAddr').value||'---';
-  let msg='طلب جديد من موقع فيتامين 🥤%0A%0A';
-  for(let k in cart){ msg+=cart[k].qty+'x '+k+' - '+(cart[k].price*cart[k].qty)+' ج%0A'; }
-  let total=0; for(let k in cart) total+=cart[k].price*cart[k].qty;
-  msg+='%0Aالاجمالي: '+total+' ج%0Aالاسم: '+name+'%0Aرقم الزبون: '+phone+'%0Aالعنوان: '+addr;
-  window.open('https://wa.me/201060747524?text='+msg,'_blank');
-}
-setInterval(addBtns,1000);
-</script>
+let items=[["مانجو",65],["برتقال",60],["جوافة",50],["فراولة",65],["كيوي",80],["أناناس",75],["رمان",75],["موز باللبن",60],["تفاح",75],["أفوكادو",100],["عصير مشكل",75],["بطيخ",60],["ليمون نعناع",55],["عنب",70],["خوخ",65],["مشمش",60],["توت",90],["قصب",50],["كركديه",40],["عرقسوس",40],["سوبيا",50],["خروب",45],["دوم",45],["تمر هندي",50],["شاي",20],["قهوة",35],["نسكافيه",40],["كابتشينو",50],["هوت شوكلت",55],["اسبريسو",45],["ميلك شيك",85],["سموذي",90],["آيس كوفي",60],["موهيتو",75],["ميكس بيري",85]];
+let cart={};
+let menu=document.getElementById('menu');
+items.forEach(([name,price])=>{
+let d=document.createElement('div');d.className='item';
+d.innerHTML=`<h3>${name}</h3><div class="price">${price} ج</div><button onclick="add('${name}',${price})">+ أضف للطلب</button>`;
+menu.appendChild(d);});
+function add(n,p){cart[n]=cart[n]||{p:p,q:0};cart[n].q++;upd();}
+function upd(){let t=0,txt='';for(let k in cart){t+=cart[k].p*cart[k].q;txt+=cart[k].q+'x '+k+' - '+(cart[k].p*cart[k].q)+'ج | ';}document.getElementById('cartText').innerText=txt?txt+' الاجمالي: '+t+' ج':'السلة فاضية';}
+function send(){let msg='طلب جديد من فيتامين%0A%0A';for(let k in cart)msg+=cart[k].q+'x '+k+' - '+(cart[k].p*cart[k].q)+' ج%0A';let t=0;for(let k in cart)t+=cart[k].p*cart[k].q;msg+='%0Aالاجمالي: '+t+' ج%0Aالاسم: '+(document.getElementById('n').value||'---')+'%0Aالموبايل: '+(document.getElementById('p').value||'---')+'%0Aالعنوان: '+(document.getElementById('a').value||'---');window.open('https://wa.me/201060747524?text='+msg,'_blank');}
+</script></body></html>
