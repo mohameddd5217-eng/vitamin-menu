@@ -3,102 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VITAMIN - فيتامين</title>
+<title>VITAMIN JUICE - فيتامين للعصائر الطبيعية</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
-body{background:#f7f7f7;padding-bottom:40px}
-.header{background:linear-gradient(135deg,#ff8a00,#ff6a00);padding:26px 15px 18px;text-align:center;color:#fff;border-radius:0 0 25px 25px}
-.header h1{font-size:42px;font-weight:900}
-.header h1 span{font-size:22px;display:block}
-.header p{margin-top:8px;font-size:14px}
-.header .addr{margin-top:10px;font-size:12px;line-height:1.7;background:rgba(255,255,255,.18);padding:8px;border-radius:12px}
-.cats{display:flex;gap:8px;overflow-x:auto;padding:14px 12px;position:sticky;top:0;background:#f7f7f7;z-index:10}
-.cats button{white-space:nowrap;border:none;background:#0a2a5e;color:#fff;padding:10px 18px;border-radius:20px;font-size:14px;font-weight:700}
-.cats button.active{background:#ff6a00}
-.section{padding:0 12px}
-.section h2{font-size:20px;margin:14px 4px;color:#0a2a5e}
-.card{background:#fff;border-radius:16px;display:flex;gap:12px;padding:12px;margin-bottom:10px;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.card img{width:88px;height:88px;object-fit:cover;border-radius:12px;flex-shrink:0}
-.info{flex:1}
-.info h3{font-size:16px}
-.prices{display:flex;gap:6px;margin-top:8px}
-.price{background:#0a2a5e;color:#fff;border-radius:8px;padding:6px 0;text-align:center;flex:1}
-.price small{display:block;font-size:11px;opacity:.8}
-.price b{font-size:14px}
-.search{margin:12px;padding:0 12px}
-.search input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #ddd;font-size:15px}
+body{background:#0a2a6b;color:#fff;padding-bottom:90px}
+header{background:#0a2a6b;text-align:center;padding:22px 14px 14px;position:sticky;top:0;z-index:10;border-bottom:3px solid #ffb400}
+.logo{width:110px;height:110px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:52px;border:4px solid #ffb400;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:cover}
+h1{font-size:32px;letter-spacing:2px}
+h1 span{color:#ffb400}
+.sub{color:#ffd966;font-size:16px;margin-top:4px}
+.info{background:#fff;color:#0a2a6b;margin:14px;border-radius:16px;padding:14px;text-align:center;line-height:1.8;font-weight:700}
+.info a{color:#0a2a6b;text-decoration:none;font-size:19px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;scrollbar-width:none;position:sticky;top:164px;background:#0a2a6b;z-index:9}
+.tabs::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;background:#1a4aa0;color:#fff;border:2px solid #fff3;padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:800;font-size:14px}
+.tab.active{background:#ffb400;color:#0a2a6b;border-color:#ffb400}
+.section{display:none;padding:6px 14px}
+.section.active{display:block}
+.sec-title{background:#ffb400;color:#0a2a6b;text-align:center;padding:12px;border-radius:14px;font-size:22px;font-weight:900;margin:12px 0}
+.card{background:#fff;color:#222;border-radius:16px;padding:13px 14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+.card b{font-size:16px;color:#0a2a6b}
+.card small{color:#777;display:block;font-size:12px;margin-top:2px}
+.prices{display:flex;gap:6px;flex-shrink:0}
+.price{background:#0a2a6b;color:#fff;border-radius:10px;padding:7px 8px;text-align:center;min-width:52px}
+.price span{display:block;font-size:10px;opacity:.8}
+.price b{color:#ffdd00;font-size:15px}
+.price.single{min-width:70px}
+.note{background:#fff3;color:#ffe27a;text-align:center;padding:10px;border-radius:12px;font-size:13px;margin:10px 0}
+footer{position:fixed;bottom:0;left:0;right:0;background:#ffb400;color:#0a2a6b;text-align:center;padding:12px;font-weight:900}
+footer a{color:#0a2a6b;text-decoration:none;font-size:18px}
 </style>
 </head>
 <body>
-<div class="header">
-<h1>VITAMIN <span>فيتامين</span></h1>
-<p>للعصائر الطبيعية 🍹</p>
-<div class="addr">الفرع الأول: 68 أبو المحاسن الشاذلي بجوار فرع اتصالات - العجوزة<br>01128856561 - 01003212171<br>الفرع الثاني: 161 طومان باي - ميدان ابن الحكم - أمام صيدلية دوس<br>01158593216 - 01034673671</div>
+<header>
+<div class="logo">🍍</div>
+<h1>VITAMIN <span>JUICE</span></h1>
+<div class="sub">فيتامين للعصائر الطبيعية 🍊🥭🍓</div>
+</header>
+
+<div class="info">
+📍 161 طومان باي - ميدان بن الحكم - أمام صيدلية دوس<br>
+📞 <a href="tel:01034673671">01034673671</a> - اطلب دلوقتي
 </div>
-<div class="search"><input id="search" placeholder="دور على مشروب..."></div>
-<div class="cats" id="cats"></div>
-<div id="list"></div>
+
+<div class="tabs" id="tabs"></div>
+<div id="content"></div>
+
+<div class="note">الأسعار: وسط - كبير - لتر | العصائر الشرقية: صغير - وسط - كبير - لتر</div>
+<footer>📞 <a href="tel:01034673671">اتصل بينا: 01034673671</a></footer>
+
 <script>
-const IMGS={
-"عصائر فريش":"https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=300",
-"مانجو":"https://images.unsplash.com/photo-1553279768-865429fa0078?w=300",
-"أفوكادو":"https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=300",
-"كوكتيلات":"https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300",
-"سموذي":"https://images.unsplash.com/photo-1502741224143-90386d7f8c82?w=300",
-"ميلك شيك":"https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=300",
-"زبادو":"https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300",
-"شيكولاتة":"https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=300",
-"مكسرات":"https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=300",
-"الرضاعة":"https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300",
-"الدايت":"https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=300",
-"عصائر شرقية":"https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=300",
-"آيس كريم و أطباق":"https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=300",
-"مشروبات ساخنة":"https://images.unsplash.com/photo-1541167760496-1628856ab772?w=300"
-};
-  const DATA=[
-{cat:"عصائر فريش",items:[["برتقال - Oranges",[25,30,65]],["جزر برتقال - Carrots",[30,35,75]],["كنتالوب - Cantaloupe",[25,30,60]],["جوافة - Guava",[25,30,65]],["يوسفي - Tangerines",[20,25,50]],["فراولة - Strawberries",[25,30,70]],["فراولة قطع وعصير",[30,35,80]],["ليمون - Lemons",[20,25,50]],["ليمون نعناع - Mint Lemons",[20,25,50]],["ليمون لبن - Milk Lemons",[25,30,65]],["بطيخ - Watermelon",[25,30,70]],["كيوي - Kiwi",[35,40,90]],["موز - Bananas",[30,35,80]],["رمان - Pomegranates",[30,35,85]],["رمان حب - Pomegranate Seeds",[30,35,85]],["تين شوكي - Prickly Pear",[30,35,85]],["عنب - Grapes",[30,35,85]],["بلح بلبن - Dates",[30,35,80]],["جرجير - Arugula",[25,30,65]],["تفاح - Apples",[30,35,80]],["برقوق - Plums",[30,35,85]],["خوخ - Peaches",[30,35,85]],["أناناس - Pineapples",[40,45,120]]]},
-{cat:"مانجو",items:[["مانجو - Mango",[25,30,80]],["مانجو هاواي",[30,35,90]],["روميو وجوليت - مانجو + شرائح موز",[30,35,90]],["تنورة عدس - مانجو + حب رمان",[35,40,100]],["مانجو + موز + آيس كريم",[35,40,100]],["مانجو توينكز",[35,40,100]],["مانجوتشينو",[35,40,100]],["مانجو + نسكافيه",[35,40,100]],["مانجو آيس كريم",[35,40,100]],["مانجو كيوي",[35,40,100]],["مانجو خوخ",[35,40,100]]]},
-{cat:"أفوكادو",items:[["أفوكادو بالعسل",[60,70,180]],["أفوكادو توت",[60,70,180]],["أفوكادو فراولة",[60,70,180]],["أفوكادو كيوي",[65,75,190]],["أفوكادو خوخ",[65,75,190]],["أفوكادو أناناس",[65,75,190]],["أفوكادو مانجو",[60,70,180]],["أفوكادو رمان",[65,75,190]],["أفوكادو جوز هند",[65,75,190]],["أفوكادو كاجو",[80,90,210]],["أفوكادو مكسرات",[80,90,210]]]},
-{cat:"كوكتيلات",items:[["كوكتيل نصف ضربة",[30,35,90]],["سمارت | برتقال + خوخ",[35,40,90]],["فيفا | بلح + موز + آيس كريم",[35,40,90]],["بينا كولادا | برتقال + أناناس + جوز هند",[50,55,130]],["لوتس | مانجو + فراولة + آيس كريم",[35,40,90]],["سيمبا | بلح + أوريو + آيس كريم",[35,40,90]],["مارجريت | مانجو + جوز هند + آيس كريم",[35,40,90]],["فيتامين سي | برتقال + جوافة + ليمون",[35,40,90]],["صن شاين | سفن + ليمون نعناع",[30,35,85]],["انتعاش | أناناس + ليمون نعناع",[40,45,105]],["بطيخ نعناع",[25,30,70]],["هيموجلوبين | فراولة + رمان + بنجر",[35,40,90]],["سوبر مان | موز + بلح + جرجير + كيوي",[40,45,100]],["هالك | أفوكادو + كيوي + بلح + حلاوة + عسل",[70,80,90]],["ايرون مان | بلح + حلاوة + آيس كريم",[35,40,90]],["كات وومان | فراولة + موز + لبن",[30,35,85]],["كابتن أمريكا | فراولة + بلح + مانجو",[35,40,90]],["بات مان | بلح + موز + مكسرات",[55,60,140]]]},
-{cat:"سموذي",items:[["سموذي فراولة",[30,35,80]],["سموذي مانجو",[30,35,90]],["سموذي أناناس",[45,50,120]],["سموذي بطيخ",[30,35,80]],["سموذي توت",[30,35,80]],["سموذي مانجو خوخ",[35,40,100]],["سموذي كيوي",[40,45,100]],["سموذي نعناع",[25,30,70]],["سموذي شيكولاتة",[30,35,80]]]},
-{cat:"ميلك شيك",items:[["ميلك فراولة",[30,35,80]],["ميلك فانيليا",[30,35,80]],["ميلك توت",[30,35,80]],["ميلك شيكولاتة",[30,35,80]],["ميلك مانجو",[30,35,80]],["ميلك موكا",[35,40,90]]]},
-{cat:"زبادو",items:[["زبادي عسل",[30,35,80]],["زبادي مانجو",[35,40,90]],["زبادي توت",[35,40,90]],["زبادي قطع فواكه",[40,45,105]],["زبادي فراولة",[35,40,90]]]},
-{cat:"شيكولاتة",items:[["توينكز",[35,40,95]],["أوريو",[35,40,95]],["هوهوز",[35,40,95]],["سنيكرز",[50,60,140]],["كيت كات",[50,60,140]]]},
-{cat:"مكسرات",items:[["جوز هند",[35,40,90]],["سوداني فانيليا",[40,45,100]],["سوداني شيكولاتة",[40,45,100]],["كاجو فانيليا",[70,80,190]]]},
-{cat:"الرضاعة",items:[["الأسد | سوبيا + فانيليا",[30,35,70]],["الفيل | سوبيا + شيكولاتة",[30,35,70]],["القرد | سوبيا + مانجو",[30,35,70]],["النمر | سوبيا + فراولة",[30,35,70]],["الحوت | سوبيا + كنتالوب",[30,35,70]],["التنين | سوبيا + توت",[30,35,70]]]},
-{cat:"الدايت",items:[["اللايت | سوبيا + فانيليا",[40,45,110]],["دايز | سوبيا + شيكولاتة",[40,45,110]],["دايتكو | سوبيا + مانجو",[35,40,95]],["بينك | سوبيا + فراولة",[40,45,110]],["ريلاكس | سوبيا + كنتالوب",[35,40,90]],["كيوي برتقال",[35,40,85]],["كيوي أناناس",[45,50,120]]]},
-{cat:"عصائر شرقية",items:[["قصب",[15,20,40],"10"],["قصب سوبيا",[20,25,50],"15"],["قصب برتقال",[20,25,50],"15"],["قصب بالآيس كريم",[25,30,60],"20"],["تمر هندي",[15,20,40],"10"],["سوبيا",[20,25,50],"15"],["كركديه",[20,25,50],"15"],["دوم",[20,25,50],"15"],["دوم باللبن",[25,30,60],"20"]]},
-{cat:"آيس كريم و أطباق",items:[["بولة آيس كريم",[15,15,15],"15"],["2 بولة آيس كريم",[25,25,25],"25"],["3 بولة آيس كريم",[35,35,35],"35"],["صنداي + صوص",[20,20,20],"20"],["رمانة",[50,50,50],"50"],["موزاليتا",[50,50,50],"50"],["فخفخينا آيس كريم",[50,50,50],"50"],["أوريو",[55,55,55],"55"],["قنبلة بالآيس",[60,60,60],"60"],["سنيكو مكس",[70,70,70],"70"],["بطيخ قطع",[50,50,50],"50"],["قنبلة فيتامين",[75,75,75],"75"],["مانجو قطع",[60,60,60],"60"],["جامبو دايت",[50,50,50],"50"],["مصراوي",[55,55,55],"55"]]},
-{cat:"مشروبات ساخنة",items:[["حمص الشام",[30,30,30],"30"],["بليلة باللبن",[35,35,35],"35"],["بليلة بالكنافة",[50,50,50],"50"],["بليلة بالمكسرات",[50,50,50],"50"],["سحلب",[35,35,35],"35"]]},
+const data=[
+{name:"🍹 عصائر فريش",items:[
+["برتقال","",[25,30,65]],["جزر برتقال","",[30,35,75]],["كتانوب","",[25,30,60]],["جوافة","",[25,30,65]],["يوسفي","",[20,25,50]],["فراولة","",[25,30,70]],["فراولة قطع وعصير","",[30,35,80]],["ليمون","",[20,25,50]],["ليمون نعناع","",[20,25,50]],["ليمون لبن","",[25,30,65]],["بطيخ","",[25,30,70]],["كيوي","",[35,40,90]],["موز","",[30,35,80]],["رمان","",[30,35,85]],["رمان حب","",[30,35,85]],["تين شوكي","",[30,35,85]],["عنب","",[30,35,85]],["بلح بلبن","",[30,35,80]],["جرجير","",[25,30,65]],["تفاح","",[30,35,80]],["برقوق","",[30,35,85]],["خوخ","",[30,35,85]],["أناناس","",[40,45,120]]]},
+{name:"🥭 مانجو",items:[
+["مانجو","",[25,30,80]],["مانجو هاوي","مانجو + موز",[30,35,90]],["روميو وجولييت","مانجو + رمان",[30,35,90]],["تششورة عدس","مانجو + موز + ايس كريم",[35,40,100]],["مانجو توينكز","",[35,40,100]],["مانجوتشينو","مانجو + نسكافيه",[35,40,100]],["مانجو ايس كريم","",[35,40,100]],["مانجو كيوي","",[35,40,100]],["مانجو خوخ","",[35,40,100]]]},
+{name:"🥑 افوكادو",items:[
+["افوكادو بالعسل","",[60,70,180]],["افوكادو توت","",[60,70,180]],["افوكادو فراولة","",[60,70,180]],["افوكادو كيوي","",[65,75,190]],["افوكادو خوخ","",[65,75,190]],["افوكادو اناناس","",[65,75,190]],["افوكادو مانجو","",[60,70,180]],["افوكادو رمان","",[65,75,190]],["افوكادو جوز هند","",[65,75,190]],["افوكادو كاجو","",[80,90,210]],["افوكادو مكسرات","",[80,90,210]]]},
+{name:"🥤 سموثي",items:[
+["سموثي فراولة","",[30,35,80]],["سموثي مانجو","",[30,35,90]],["سموثي اناناس","",[45,50,120]],["سموثي بطيخ","",[30,35,80]],["سموثي توت","",[30,35,80]],["سموثي مانجو خوخ","",[35,40,100]],["سموثي كيوي","",[40,45,100]],["سموثي نعناع","",[25,30,70]],["سموثي شيكولاته","",[30,35,80]]]},
+{name:"🍫 شيكولاته",items:[
+["توينكز","",[35,40,95]],["بوريو","",[35,40,95]],["هوهوز","",[35,40,95]],["اوريو","",[35,40,95]],["سنيكرز","",[50,60,140]],["كيت كات","",[50,60,140]]]},
+{name:"🥛 ميلك شيك",items:[
+["ميلك فراولة","",[30,35,80]],["ميلك فانيليا","",[30,35,80]],["ميلك توت","",[30,35,80]],["ميلك شيكولاته","",[30,35,80]],["ميلك مانجو","",[30,35,80]],["ميلك موكا","",[35,40,90]]]},
+{name:"🍦 زبادو",items:[
+["زبادي عسل","",[30,35,80]],["زبادي مانجو","",[35,40,90]],["زبادي توت","",[35,40,90]],["زبادي قطع فواكه","",[40,45,105]],["زبادي فراولة","",[35,40,90]]]},
+{name:"🥜 مكسرات",items:[
+["جوز هند","",[35,40,90]],["سوداني فانيليا","",[40,45,100]],["سوداني شيكولاته","",[40,45,100]],["كاجو فانيليا","",[70,80,190]]]},
+{name:"🍨 ايس كريم",items:[
+["بولة ايس كريم","",[15]],["2 بولة ايس كريم","",[25]],["3 بولة ايس كريم","",[35]],["صنداي + صوص","",[20]]]},
+{name:"☕ مشروبات ساخنة",items:[
+["حمص الشام","",[30]],["بليلة باللبن","",[35]],["بليلة بالكنافة","",[50]],["بليلة بالمكسرات","",[50]],["سحلب","",[35]]]},
+{name:"🍼 الرضعات",items:[
+["الأسد","سوبيا + فانيليا",[30,35,70]],["الفيل","سوبيا + شيكولاته",[30,35,70]],["القرد","سوبيا + مانجو",[30,35,70]],["النمر","سوبيا + فراولة",[30,35,70]],["الحوت","سوبيا + كنتالوب",[30,35,70]],["التنين","سوبيا + توت",[30,35,70]]]},
+{name:"🥗 الدايت",items:[
+["لايت","سوبيا + فانيليا",[40,45,110]],["دايز","سوبيا + شيكولاته",[40,45,110]],["دايتكو","سوبيا + مانجو",[35,40,95]],["بينك","سوبيا + فراولة",[40,45,110]],["ريلاكس","سوبيا + كنتالوب",[35,40,90]],["كيوي برتقال","",[35,40,85]],["كيوي اناناس","",[45,50,120]]]},
+{name:"🏺 عصائر شرقية",items:[
+["قصب","",[10,15,20,40]],["قصب سوبيا","",[15,20,25,50]],["قصب برتقال","",[15,20,25,50]],["قصب بالايس كريم","",[20,25,30,60]],["تمر هندي","",[10,15,20,40]],["سوبيا","",[15,20,25,50]],["كركديه","",[15,20,25,50]],["دوم","",[15,20,25,50]],["دوم باللبن","",[20,25,30,60]]]},
+{name:"🍸 كوكتيلات",items:[
+["كوكتيل نصف ضربة","",[30,35,90]],["سمارت","برتقال + خوخ",[35,40,90]],["فيفا","بلح + موز + ايس كريم",[35,40,90]],["بينا كولادا","برتقال + اناناس + جوز هند",[50,55,130]],["لوتس","مانجو + فراولة + ايس كريم",[35,40,90]],["سيمبا","بلح + بوريو + ايس كريم",[35,40,90]],["مارجريت","مانجو + جوز هند + ايس كريم",[35,40,90]],["فيتامين سي","برتقال + جوافة + ليمون",[35,40,90]],["صن شاين","سفن + ليمون نعناع",[30,35,85]],["انتعاش","اناناس + ليمون نعناع",[40,45,105]],["بطيخ نعناع","",[25,30,70]],["هيموجلوبين","فراولة + رمان + بنجر",[35,40,90]],["سوبر مان","موز + بلح + جرجير + كيوي",[40,45,100]],["هالك","افوكادو + كيوي + بلح + حلاوة + عسل",[70,80,90]],["ايرون مان","بلح + حلاوة + ايس كريم",[35,40,90]],["كات وومان","فراولة + موز + لبن",[30,35,85]],["كابتن امريكان","فراولة + بلح + مانجو",[35,40,90]],["بات مان","بلح + موز + مكسرات",[55,60,140]]]},
+{name:"🍇 أطباق فاكهة",items:[
+["رمانه","",[50]],["موزاليتا","",[50]],["فخفخينا ايس كريم","",[50]],["بوريو","",[55]],["شيتيكو مكس","",[70]],["قنبلة بالايس","",[60]],["بطيخ قطع","",[50]],["قنبلة فيتامين","",[75]],["مانجو قطع","",[60]],["جامبو دايت","",[50]],["مصراوي","",[55]]]},
 ];
-let active="الكل";
-function render(){
-const q=(document.getElementById('search').value||"").trim();
-const catsEl=document.getElementById('cats');catsEl.innerHTML="";
-["الكل",...DATA.map(d=>d.cat)].forEach(c=>{
-const b=document.createElement('button');b.textContent=c;b.className=c===active?'active':'';
-b.onclick=()=>{active=c;render()};
-catsEl.appendChild(b);
+const tabs=document.getElementById('tabs');
+const content=document.getElementById('content');
+data.forEach((sec,i)=>{
+let b=document.createElement('button'); b.className='tab'+(i==0?' active':''); b.textContent=sec.name; b.onclick=()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); b.classList.add('active'); document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); document.getElementById('sec'+i).classList.add('active'); window.scrollTo({top:0,behavior:'smooth'});}; tabs.appendChild(b);
+let div=document.createElement('div'); div.className='section'+(i==0?' active':''); div.id='sec'+i;
+let title=document.createElement('div'); title.className='sec-title'; title.textContent=sec.name; div.appendChild(title);
+sec.items.forEach(it=>{
+let card=document.createElement('div'); card.className='card';
+let left=document.createElement('div'); left.innerHTML='<b>'+it[0]+'</b>'+(it[1]?'<small>'+it[1]+'</small>':'');
+let pr=document.createElement('div'); pr.className='prices';
+let labels = sec.name.includes('شرقية') ? ['صغير','وسط','كبير','لتر'] : (it[2].length==1?['السعر']:(it[2].length==4?['صغير','وسط','كبير','لتر']:['وسط','كبير','لتر']));
+it[2].forEach((p,idx)=>{let d=document.createElement('div'); d.className='price'+(it[2].length==1?' single':''); d.innerHTML='<span>'+labels[idx]+'</span><b>'+p+'</b>'; pr.appendChild(d);});
+card.appendChild(left); card.appendChild(pr); div.appendChild(card);
 });
-const list=document.getElementById('list');list.innerHTML="";
-DATA.forEach(sec=>{
-if(active!=="الكل" && active!==sec.cat) return;
-let items=sec.items.filter(it=>!q || it[0].includes(q));
-if(!items.length) return;
-let html=`<div class="section"><h2>${sec.cat}</h2>`;
-items.forEach(it=>{
-const isSingle = sec.cat==="آيس كريم و أطباق" || sec.cat==="مشروبات ساخنة";
-let priceHtml="";
-if(isSingle){ priceHtml=`<div class="prices"><div class="price"><small>السعر</small><b>${it[2]}</b></div></div>` }
-else if(sec.cat==="عصائر شرقية"){ priceHtml=`<div class="prices"><div class="price"><small>صغير</small><b>${it[2]}</b></div><div class="price"><small>وسط</small><b>${it[1][0]}</b></div><div class="price"><small>كبير</small><b>${it[1][1]}</b></div><div class="price"><small>لتر</small><b>${it[1][2]}</b></div></div>` }
-else{ priceHtml=`<div class="prices"><div class="price"><small>وسط</small><b>${it[1][0]}</b></div><div class="price"><small>كبير</small><b>${it[1][1]}</b></div><div class="price"><small>لتر</small><b>${it[1][2]}</b></div></div>` }
-html+=`<div class="card"><div class="info"><h3>${it[0]}</h3>${priceHtml}</div><img src="${IMGS[sec.cat]}"></div>`;
+content.appendChild(div);
 });
-html+=`</div>`;list.innerHTML+=html;
-});
-}
-document.getElementById('search').addEventListener('input',render);
-render();
 </script>
 </body>
 </html>
