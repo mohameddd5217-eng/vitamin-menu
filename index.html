@@ -3,113 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VITAMIN JUICE</title>
+<title>VITAMIN JUICE - فيتامين للعصائر الطبيعية</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#fdf6e9;padding:15px}
-header{background:#1a7a3a;color:#fff;text-align:center;padding:20px 10px;border-radius:15px}
-header h1{font-size:32px;letter-spacing:1px}
-header p{margin-top:5px;opacity:.9}
-.cart-btn{position:fixed;top:15px;left:15px;background:#ff7a00;color:#fff;border:none;padding:12px 16px;border-radius:50px;font-size:16px;font-weight:bold;cursor:pointer;z-index:100;box-shadow:0 4px 10px rgba(0,0,0,.2)}
-.menu{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
-.card{background:#fff;border-radius:15px;padding:12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.card h3{font-size:18px;margin:8px 0 4px}
-.card p{font-size:13px;color:#777}
-.price{color:#e67e00;font-weight:bold;font-size:18px;margin:6px 0}
-.add{background:#1a7a3a;color:#fff;border:none;padding:9px;width:100%;border-radius:10px;font-size:15px;cursor:pointer}
-.add:active{background:#145c2c}
-.drawer{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);display:none;z-index:200}
-.drawer.open{display:block}
-.sheet{background:#fff;position:absolute;bottom:0;left:0;right:0;max-height:85%;border-radius:20px 20px 0 0;padding:18px;overflow:auto}
-.sheet h2{margin-bottom:12px}
-.item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee}
-.item b{font-size:15px}
-.qty{display:flex;gap:8px;align-items:center}
-.qty button{width:30px;height:30px;border-radius:50%;border:1px solid #ddd;background:#f5f5f5;font-size:18px;cursor:pointer}
-.total{font-size:20px;font-weight:bold;margin:15px 0;text-align:left}
-.wa{background:#25D366;color:#fff;border:none;padding:14px;width:100%;border-radius:12px;font-size:18px;font-weight:bold;cursor:pointer}
-.close{background:#eee;border:none;padding:10px;width:100%;border-radius:10px;margin-top:8px;cursor:pointer}
-.empty{text-align:center;color:#888;padding:20px}
-@media(max-width:400px){.menu{grid-template-columns:1fr}}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
+body{background:#0a2a6b;color:#fff;padding-bottom:140px}
+header{background:#0a2a6b;text-align:center;padding:22px 14px 14px;position:sticky;top:0;z-index:10;border-bottom:3px solid #ffb400}
+.logo{width:110px;height:110px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:52px;border:4px solid #ffb400;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:cover}
+h1{font-size:32px;letter-spacing:2px}
+h1 span{color:#ffb400}
+.sub{color:#ffd966;font-size:16px;margin-top:4px}
+.info{background:#fff;color:#0a2a6b;margin:14px;border-radius:16px;padding:14px;text-align:center;line-height:1.8;font-weight:700}
+.info a{color:#0a2a6b;text-decoration:none;font-size:19px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;scrollbar-width:none;position:sticky;top:164px;background:#0a2a6b;z-index:9}
+.tabs::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;background:#1a4aa0;color:#fff;border:2px solid #fff3;padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:800;font-size:14px}
+.tab.active{background:#ffb400;color:#0a2a6b;border-color:#ffb400}
+.section{display:none;padding:6px 14px}
+.section.active{display:block}
+.sec-title{background:#ffb400;color:#0a2a6b;text-align:center;padding:12px;border-radius:14px;font-size:22px;font-weight:900;margin:12px 0}
+.card{background:#fff;color:#222;border-radius:16px;padding:13px 14px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;box-shadow:0 4px 14px rgba(0,0,0,.2);flex-wrap:wrap}
+.card b{font-size:16px;color:#0a2a6b}
+.card small{color:#777;display:block;font-size:12px;margin-top:2px}
+.prices{display:flex;gap:6px;flex-shrink:0}
+.price{background:#0a2a6b;color:#fff;border-radius:10px;padding:7px 8px;text-align:center;min-width:52px}
+.price span{display:block;font-size:10px;opacity:.8}
+.price b{color:#ffdd00;font-size:15px}
+.price.single{min-width:70px}
+.note{background:#fff3;color:#ffe27a;text-align:center;padding:10px;border-radius:12px;font-size:13px;margin:10px 0}
+footer{position:fixed;bottom:0;left:0;right:0;background:#ffb400;color:#0a2a6b;text-align:center;padding:12px;font-weight:900;z-index:20}
+footer a{color:#0a2a6b;text-decoration:none;font-size:18px}
+/* السلة بس - من غير تغيير اي لون */
+.adds{display:flex;gap:6px;width:100%}
+.add-btn{flex:1;background:#ffb400;color:#0a2a6b;border:none;padding:8px;border-radius:10px;font-weight:900;cursor:pointer;font-size:13px}
+.cart-bar{position:fixed;bottom:48px;left:14px;right:14px;background:#fff;color:#0a2a6b;border-radius:14px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:20;cursor:pointer}
+.cart-bar span{background:#0a2a6b;color:#ffdd00;padding:4px 10px;border-radius:999px}
+.cart-box{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:30;align-items:flex-end;justify-content:center}
+.cart-box.open{display:flex}
+.cart-inner{background:#fff;color:#222;width:100%;max-width:500px;border-radius:20px 20px 0 0;padding:18px;max-height:85vh;overflow:auto}
+.cart-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee}
+.cart-item b{color:#0a2a6b}
+.del{background:#ff4444;color:#fff;border:none;padding:5px 10px;border-radius:8px;cursor:pointer}
+.wa-btn{display:block;background:#25D366;color:#fff;text-align:center;padding:14px;border-radius:12px;text-decoration:none;font-weight:900;margin-top:14px;font-size:17px}
+.close-btn{width:100%;background:#0a2a6b;color:#fff;border:none;padding:10px;border-radius:10px;margin-top:10px;font-weight:800;cursor:pointer}
 </style>
 </head>
 <body>
-
-<button class="cart-btn" onclick="openCart()">🛒 السلة (<span id="count">0</span>)</button>
-
 <header>
-<h1>VITAMIN JUICE</h1>
-<p>عصائر طبيعية 100% - طازة كل يوم</p>
+<div class="logo">🍍</div>
+<h1>VITAMIN <span>JUICE</span></h1>
+<div class="sub">فيتامين للعصائر الطبيعية 🍊🥭🍓</div>
 </header>
 
-<div class="menu" id="menu"></div>
+<div class="info">
+📍 161 طومان باي - ميدان بن الحكم - أمام صيدلية دوس<br>
+📞 <a href="tel:01034673671">01034673671</a> - اطلب دلوقتي
+</div>
 
-<div class="drawer" id="drawer">
-<div class="sheet">
-<h2>🛒 سلة الطلبات</h2>
-<div id="cartItems"></div>
-<div class="total" id="total"></div>
-<button class="wa" onclick="orderWhats()">اطلب على واتساب ✅</button>
-<button class="close" onclick="closeCart()">قفل</button>
+<div class="tabs" id="tabs"></div>
+<div id="content"></div>
+
+<div class="note">الأسعار: وسط - كبير - لتر | العصائر الشرقية: صغير - وسط - كبير - لتر</div>
+
+<div class="cart-bar" onclick="openCart()">🛒 السلة <span id="cartCount">0</span> <span id="cartTotal">0 ج</span> <span>عرض السلة ←</span></div>
+
+<div class="cart-box" id="cartBox">
+<div class="cart-inner">
+<h3 style="color:#0a2a6b;text-align:center">🛒 سلتك</h3>
+<div id="cartItems" style="margin-top:12px"></div>
+<div id="cartTotal2" style="font-weight:900;text-align:center;margin-top:12px;font-size:18px;color:#0a2a6b"></div>
+<a href="#" id="waLink" class="wa-btn" target="_blank">اطلب على واتساب 📲</a>
+<button class="close-btn" onclick="closeCart()">اقفل السلة</button>
 </div>
 </div>
+
+<footer>📞 <a href="tel:01034673671">اتصل بينا: 01034673671</a></footer>
 
 <script>
-const products=[
-{name:"عصير برتقال",price:35,desc:"برتقال طازة"},
-{name:"عصير مانجو",price:50,desc:"مانجو طبيعي"},
-{name:"عصير فراولة",price:45,desc:"فراولة فريش"},
-{name:"عصير كيوي",price:55,desc:"كيوي طازة"},
-{name:"عصير جوافة",price:40,desc:"جوافة طبيعية"},
-{name:"عصير موز باللبن",price:45,desc:"موز + لبن"},
-{name:"عصير تفاح",price:50,desc:"تفاح فريش"},
-{name:"عصير أناناس",price:55,desc:"أناناس طازة"},
-{name:"عصير ليمون بالنعناع",price:35,desc:"ليمون + نعناع"},
-{name:"عصير بطيخ",price:40,desc:"بطيخ ساقع"},
-{name:"عصير رمان",price:55,desc:"رمان طبيعي"},
-{name:"عصير خوخ",price:45,desc:"خوخ فريش"},
-];
-let cart={};
-function renderMenu(){
-document.getElementById('menu').innerHTML=products.map((p,i)=>`
-<div class="card">
-<h3>${p.name}</h3>
-<p>${p.desc}</p>
-<div class="price">${p.price} ج</div>
-<button class="add" onclick="addToCart(${i})">أضف للسلة +</button>
-</div>`).join('');
-}
-function addToCart(i){
-cart[i]=(cart[i]||0)+1;
-updateCart();
-alert(products[i].name+" اتضاف للسلة ✅");
-}
+let cart=[];
+function addToCart(name,size,price){cart.push({name,size,price});updateCart();}
 function updateCart(){
-let c=Object.values(cart).reduce((a,b)=>a+b,0);
-document.getElementById('count').innerText=c;
-let html="",total=0;
-for(let i in cart){
-let p=products[i],q=cart[i],sub=p.price*q;total+=sub;
-html+=`<div class="item"><div><b>${p.name}</b><br>${p.price} ج × ${q} = ${sub} ج</div><div class="qty"><button onclick="changeQty(${i},-1)">-</button><b>${q}</b><button onclick="changeQty(${i},1)">+</button></div></div>`;
-}
-if(!html) html='<div class="empty">السلة فاضية، ضيف حاجة الأول</div>';
+document.getElementById('cartCount').textContent=cart.length;
+let total=cart.reduce((s,i)=>s+i.price,0);
+document.getElementById('cartTotal').textContent=total+' ج';
+let html=''; if(cart.length==0) html='<p style="text-align:center;color:#777">السلة فاضية</p>';
+cart.forEach((it,idx)=>{html+='<div class="cart-item"><div><b>'+it.name+'</b><br><small>'+it.size+' - '+it.price+' ج</small></div><button class="del" onclick="removeItem('+idx+')">حذف</button></div>'});
 document.getElementById('cartItems').innerHTML=html;
-document.getElementById('total').innerText=total?`الإجمالي: ${total} ج`:'';
+document.getElementById('cartTotal2').textContent='الإجمالي: '+total+' ج';
+let msg='أهلا فيتامين 🍹%0Aعايز أطلب:%0A';
+cart.forEach(it=>{msg+= '- '+it.name+' ('+it.size+') - '+it.price+' ج%0A';});
+msg+='الإجمالي: '+total+' ج';
+document.getElementById('waLink').href='https://wa.me/201034673671?text='+msg;
 }
-function changeQty(i,d){
-cart[i]+=d; if(cart[i]<=0) delete cart[i]; updateCart();
-}
-function openCart(){updateCart();document.getElementById('drawer').classList.add('open');}
-function closeCart(){document.getElementById('drawer').classList.remove('open');}
-function orderWhats(){
-if(Object.keys(cart).length==0){alert('السلة فاضية!');return;}
-let msg="أهلاً، عايز أطلب من VITAMIN JUICE:%0A%0A";
-let total=0;
-for(let i in cart){let p=products[i],q=cart[i],sub=p.price*q;total+=sub;msg+=`- ${p.name} × ${q} = ${sub} ج%0A`;}
-msg+=`%0Aالإجمالي: ${total} ج%0A%0Aالاسم: %0Aالعنوان: %0Aرقم التليفون: `;
-window.open("https://wa.me/201060747524?text="+msg,"_blank");
-}
-renderMenu();
-</script>
-</body>
-</html>
+function removeItem(i){cart.splice(i,1);updateCart();}
+function openCart(){document.getElementById('cartBox').classList.add('open');}
+function closeCart(){document.getElementById('cartBox').classList.remove('open');}
+const data=[
+{name:"🍹 عصائر فريش",items:[
+["برتقال","",[25,30,65]],["جزر برتقال","",[30,35,75]],["كانتلوب","",[25,30,60]],["جوافة","",[25,30,65]],["يوسفي","",[20,25,50]],["فراولة","",[25,30,70]],["فراولة قطع وعصير","",[30,35,80]],["ليمون
