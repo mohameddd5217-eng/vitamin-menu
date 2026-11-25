@@ -1,283 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITAMIN - Juice Menu</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#FFF8E7;color:#2D2D2D}
+header{background:#FF8C00;color:#fff;text-align:center;padding:25px 15px}
+header h1{font-size:32px;letter-spacing:2px}
+header p{margin-top:5px;opacity:.9}
+.menu{max-width:800px;margin:20px auto;padding:0 15px;display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.card{background:#fff;border-radius:15px;padding:15px;text-align:center;box-shadow:0 3px 10px rgba(0,0,0,.1)}
+.card .emoji{font-size:45px}
+.card h3{margin:10px 0 5px;font-size:18px}
+.card p{font-size:13px;color:#777;min-height:35px}
+.price{color:#FF8C00;font-weight:bold;font-size:18px;margin-top:8px}
+footer{text-align:center;padding:20px;color:#888;font-size:13px}
+@media(max-width:500px){.menu{grid-template-columns:1fr}}
+</style>
+</head>
 <body>
 <header>
-<div class="logo">🍍</div>
-<h1>VITAMIN <span>JUICE</span></h1>
-<div class="sub">فيتامين للعصائر الطبيعية 🍊🥭🍓</div>
+<h1>🍹 VITAMIN</h1>
+<p>Fresh Juice & Smoothies - فريش و طبيعي 100%</p>
 </header>
-<div class="info">
-📍 161 طومان باي - ميدان بن الحكم - أمام صيدلية دوس<br>
-📞 <a href="tel:01034673671">01034673671</a> - اطلب دلوقتي
+<div class="menu">
+  <div class="card"><div class="emoji">🥭</div><h3>Mango Juice</h3><p>Fresh mango, natural sweetness</p><div class="price">60 EGP</div></div>
+<div class="card"><div class="emoji">🍊</div><h3>Orange Juice</h3><p>Freshly squeezed oranges</p><div class="price">50 EGP</div></div>
+<div class="card"><div class="emoji">🍓</div><h3>Strawberry Juice</h3><p>Fresh strawberry & milk</p><div class="price">65 EGP</div></div>
+<div class="card"><div class="emoji">🥑</div><h3>Avocado Smoothie</h3><p>Avocado, milk & honey</p><div class="price">80 EGP</div></div>
+<div class="card"><div class="emoji">🍌</div><h3>Banana Smoothie</h3><p>Banana, milk & honey</p><div class="price">55 EGP</div></div>
+<div class="card"><div class="emoji">🍍</div><h3>Pineapple Juice</h3><p>Fresh pineapple</p><div class="price">60 EGP</div></div>
+<div class="card"><div class="emoji">🍎</div><h3>Apple Juice</h3><p>Fresh red apples</p><div class="price">55 EGP</div></div>
+<div class="card"><div class="emoji">🥕</div><h3>Carrot Juice</h3><p>Fresh carrots & orange</p><div class="price">50 EGP</div></div>
+<div class="card"><div class="emoji">🍇</div><h3>Grape Juice</h3><p>Fresh grapes</p><div class="price">60 EGP</div></div>
+<div class="card"><div class="emoji">🥝</div><h3>Kiwi Juice</h3><p>Fresh kiwi, vitamin C</p><div class="price">70 EGP</div></div>
+<div class="card"><div class="emoji">🍉</div><h3>Watermelon Juice</h3><p>Fresh cold watermelon</p><div class="price">45 EGP</div></div>
+<div class="card"><div class="emoji">🥤</div><h3>Vitamin Mix</h3><p>Our special mix - Ask us!</p><div class="price">75 EGP</div></div>
 </div>
-<div class="tabs" id="tabs"></div>
-<div id="content"></div>
-<div class="note">الأسعار: وسط - كبير - لتر | العصائر الشرقية: صغير - وسط - كبير - لتر</div>
-<style>
-.note{background:#fff3;color:#ffe27a;text-align:center;padding:10px;border-radius:12px;font-size:13px;margin:10px 0}
-footer{position:fixed;bottom:0;left:0;right:0;background:#ffb400;color:#0a2a6b;text-align:center;padding:12px;font-weight:900;z-index:20}
-footer a{color:#0a2a6b;text-decoration:none;font-size:18px}
-.adds{display:flex;gap:6px;width:100%}
-.add-btn{flex:1;background:#ffb400;color:#0a2a6b;border:none;padding:8px;border-radius:10px;font-weight:900;cursor:pointer;font-size:13px}
-.cart-bar{position:fixed;bottom:48px;left:14px;right:14px;background:#fff;color:#0a2a6b;border-radius:14px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;font-weight:900;z-index:20;cursor:pointer}
-.cart-bar span{background:#0a2a6b;color:#ffdd00;padding:4px 10px;border-radius:999px}
-.cart-box{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:30;align-items:flex-end;justify-content:center}
-.cart-box.open{display:flex}
-.cart-inner{background:#fff;color:#222;width:100%;max-width:500px;border-radius:20px 20px 0 0;padding:18px;max-height:85vh;overflow:auto}
-.cart-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee}
-.del{background:#ff4444;color:#fff;border:none;padding:5px 10px;border-radius:8px;cursor:pointer}
-.wa-btn{display:block;background:#25D366;color:#fff;text-align:center;padding:14px;border-radius:12px;text-decoration:none;font-weight:900;margin-top:14px;font-size:17px}
-.close-btn{width:100%;background:#0a2a6b;color:#fff;border:none;padding:10px;border-radius:10px;margin-top:10px;font-weight:800;cursor:pointer}
-</style>
-<div class="cart-bar" onclick="openCart()">🛒 السلة <span id="cartCount">0</span> <span id="cartTotal">0 ج</span> <span>عرض السلة ←</span></div>
-<div class="cart-box" id="cartBox">
-<div class="cart-inner">
-<h3 style="color:#0a2a6b;text-align:center">🛒 سلتك</h3>
-<div id="cartItems"></div>
-<div id="cartTotal2" style="font-weight:900;text-align:center;margin-top:12px;font-size:18px;color:#0a2a6b"></div>
-<a href="#" id="waLink" class="wa-btn" target="_blank">اطلب على واتساب 📲</a>
-<button class="close-btn" onclick="closeCart()">اقفل السلة</button>
-</div>
-</div>
-<footer>📞 <a href="tel:01034673671">اتصل بينا: 01034673671</a></footer>
-<script>
-let cart=[];
-function addToCart(n,s,p){cart.push({name:n,size:s,price:p});updateCart();}
-function updateCart(){
-document.getElementById('cartCount').textContent=cart.length;
-let t=cart.reduce((a,i)=>a+i.price,0);
-document.getElementById('cartTotal').textContent=t+' ج';
-let h='';if(cart.length==0)h='<p style="text-align:center;color:#777">السلة فاضية</p>';
-cart.forEach((it,i)=>{h+='<div class="cart-item"><div><b>'+it.name+'</b><br><small>'+it.size+' - '+it.price+' ج</small></div><button class="del" onclick="removeItem('+i+')">حذف</button></div>'});
-document.getElementById('cartItems').innerHTML=h;
-document.getElementById('cartTotal2').textContent='الإجمالي: '+t+' ج';
-let m='أهلا فيتامين 🍹%0Aعايز أطلب:%0A';
-cart.forEach(it=>{m+='- '+it.name+' ('+it.size+') - '+it.price+' ج%0A';});
-m+='الإجمالي: '+t+' ج';
-document.getElementById('waLink').href='https://wa.me/201034673671?text='+m;
-}
-function removeItem(i){cart.splice(i,1);updateCart();}
-function openCart(){document.getElementById('cartBox').classList.add('open');}
-function closeCart(){document.getElementById('cartBox').classList.remove('open');}{name:"🍨 ايس كريم",items:[
-["بولة ايس كريم","",[15]],
-["2 بولة ايس كريم","",[25]],
-["3 بولة ايس كريم","",[35]],
-["صنداي + صوص","",[20]]
-]},
-{name:"☕ مشروبات ساخنة",items:[
-["حمص الشام","",[30]],
-["بليلة باللبن","",[35]],
-["بليلة بالكنافة","",[50]],
-["بليلة بالمكسرات","",[50]],
-["سحلب","",[35]]
-]},
-{name:"🍼 الرضعات",items:[
-["الأسد","سوبيا + فانيليا",[30,35,70]],
-["الفيل","سوبيا + شيكولاته",[30,35,70]],
-["القرد","سوبيا + مانجو",[30,35,70]],
-["النمر","سوبيا + فراولة",[30,35,70]],
-["الحوت","سوبيا + كنتالوب",[30,35,70]],
-["التنين","سوبيا + توت",[30,35,70]]
-]},
-{name:"🥗 الدايت",items:[
-["لايت","تفاح + اناناس",[40,45,110]],
-["دايز","برتقال + تفاح + اناناس",[40,45,110]],
-["دايتكو","فراوله + كيوي",[35,40,95]],
-["بينك","بنجر + تفاح + اناناس",[40,45,110]],
-["ريلاكس","تفاح + جزر+ بنجر",[35,40,90]],
-["كيوي برتقال","",[35,40,85]],
-["كيوي اناناس","",[45,50,120]]
-]},
-{name:"🏺 عصائر شرقية",items:[
-["قصب","",[10,15,20,40]],
-["قصب سوبيا","",[15,20,25,50]],
-["قصب برتقال","",[15,20,25,50]],
-["قصب بالايس كريم","",[20,25,30,60]],
-["تمر هندي","",[10,15,20,40]],
-["سوبيا","",[15,20,25,50]],
-["كركديه","",[15,20,25,50]],
-["دوم","",[15,20,25,50]],
-["دوم باللبن","",[20,25,30,60]]
-]},
-{name:"🍸 كوكتيلات",items:[
-["كوكتيل نصف ضربة","",[30,35,90]],
-["سمارت","برتقال + خوخ",[35,40,90]],
-["فيفا","بلح + موز + ايس كريم",[35,40,90]],
-["بينا كولادا","برتقال + اناناس + جوز هند",[50,55,130]],
-["لوتس","مانجو + فراولة + ايس كريم",[35,40,90]],
-["سيمبا","بلح + بوريو + ايس كريم",[35,40,90]],
-["مارجريت","مانجو + جوز هند + ايس كريم",[35,40,90]],
-["فيتامين سي","برتقال + جوافة + ليمون",[35,40,90]],
-["صن شاين","سفن + ليمون نعناع",[30,35,85]],
-["انتعاش","اناناس + ليمون نعناع",[40,45,105]],
-["بطيخ نعناع","",[25,30,70]],
-["هيموجلوبين","فراولة + رمان + بنجر",[35,40,90]],
-["سوبر مان","موز + بلح + جرجير + كيوي",[40,45,100]],
-["هالك","افوكادو + كيوي + بلح + حلاوة + عسل",[70,80,90]],
-["ايرون مان","بلح + حلاوة + ايس كريم",[35,40,90]],
-["كات وومان","فراولة + موز + لبن",[30,35,85]],
-["كابتن امريكان","فراولة + بلح + مانجو",[35,40,90]],
-["بات مان","بلح + موز + مكسرات",[55,60,140]]
-]},
-{name:"🍇 أطباق فاكهة",items:[
-["رمانه","",[50]],
-["موزاليتا","",[50]],
-["فخفخينا ايس كريم","",[50]],
-["بوريو","",[55]],
-["سوبيا مكس","",[70]],
-["قنبلة بالايس","",[60]],
-["بطيخ قطع","",[50]],
-["قنبلة فيتامين","",[75]],
-["مانجو قطع","",[60]],
-["جامبو دايت","",[50]],
-["مصراوي","",[55]]
-]},
-];
-const tabs=document.getElementById('tabs');
-const content=document.getElementById('content');
-data.forEach((sec,i)=>{
-let b=document.createElement('button');
-b.className='tab'+(i==0?' active':'');
-b.textContent=sec.name;
-b.onclick=()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec'+i).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};
-tabs.appendChild(b);
-let div=document.createElement('div');
-div.className='section'+(i==0?' active':'');
-div.id='sec'+i;
-let title=document.createElement('div');
-title.className='sec-title';
-title.textContent=sec.name;
-div.appendChild(title);
-sec.items.forEach(it=>{
-let card=document.createElement('div');
-card.className='card';
-let left=document.createElement('div');
-left.innerHTML='<b>'+it[0]+'</b>'+(it[1]?'<small>'+it[1]+'</small>':'');
-let pr=document.createElement('div');
-pr.className='prices';
-let labels=sec.name.includes('شرقية')?['صغير','وسط','كبير','لتر']:(it[2].length==1?['السعر']:(it[2].length==4?['صغير','وسط','كبير','لتر']:['وسط','كبير','لتر']));
-it[2].forEach((p,idx)=>{let d=document.createElement('div');d.className='price'+(it[2].length==1?' single':'');d.innerHTML='<span>'+labels[idx]+'</span><b>'+p+'</b>';pr.appendChild(d);});
-card.appendChild(left);
-card.appendChild(pr);
-let adds=document.createElement('div');
-adds.className='adds';
-it[2].forEach((p,idx)=>{let ab=document.createElement('button');ab.className='add-btn';ab.textContent='أضف '+labels[idx]+' +';ab.onclick=()=>addToCart(it[0],labels[idx],p);adds.appendChild(ab);});
-card.appendChild(adds);
-div.appendChild(card);
-});
-content.appendChild(div);
-});
-updateCart();
-</script>
-</body>
-</html>{name:"🍨 ايس كريم",items:[
-["بولة ايس كريم","",[15]],
-["2 بولة ايس كريم","",[25]],
-["3 بولة ايس كريم","",[35]],
-["صنداي + صوص","",[20]]
-]},
-{name:"☕ مشروبات ساخنة",items:[
-["حمص الشام","",[30]],
-["بليلة باللبن","",[35]],
-["بليلة بالكنافة","",[50]],
-["بليلة بالمكسرات","",[50]],
-["سحلب","",[35]]
-]},
-{name:"🍼 الرضعات",items:[
-["الأسد","سوبيا + فانيليا",[30,35,70]],
-["الفيل","سوبيا + شيكولاته",[30,35,70]],
-["القرد","سوبيا + مانجو",[30,35,70]],
-["النمر","سوبيا + فراولة",[30,35,70]],
-["الحوت","سوبيا + كنتالوب",[30,35,70]],
-["التنين","سوبيا + توت",[30,35,70]]
-]},
-{name:"🥗 الدايت",items:[
-["لايت","تفاح + اناناس",[40,45,110]],
-["دايز","برتقال + تفاح + اناناس",[40,45,110]],
-["دايتكو","فراوله + كيوي",[35,40,95]],
-["بينك","بنجر + تفاح + اناناس",[40,45,110]],
-["ريلاكس","تفاح + جزر+ بنجر",[35,40,90]],
-["كيوي برتقال","",[35,40,85]],
-["كيوي اناناس","",[45,50,120]]
-]},
-{name:"🏺 عصائر شرقية",items:[
-["قصب","",[10,15,20,40]],
-["قصب سوبيا","",[15,20,25,50]],
-["قصب برتقال","",[15,20,25,50]],
-["قصب بالايس كريم","",[20,25,30,60]],
-["تمر هندي","",[10,15,20,40]],
-["سوبيا","",[15,20,25,50]],
-["كركديه","",[15,20,25,50]],
-["دوم","",[15,20,25,50]],
-["دوم باللبن","",[20,25,30,60]]
-]},
-{name:"🍸 كوكتيلات",items:[
-["كوكتيل نصف ضربة","",[30,35,90]],
-["سمارت","برتقال + خوخ",[35,40,90]],
-["فيفا","بلح + موز + ايس كريم",[35,40,90]],
-["بينا كولادا","برتقال + اناناس + جوز هند",[50,55,130]],
-["لوتس","مانجو + فراولة + ايس كريم",[35,40,90]],
-["سيمبا","بلح + بوريو + ايس كريم",[35,40,90]],
-["مارجريت","مانجو + جوز هند + ايس كريم",[35,40,90]],
-["فيتامين سي","برتقال + جوافة + ليمون",[35,40,90]],
-["صن شاين","سفن + ليمون نعناع",[30,35,85]],
-["انتعاش","اناناس + ليمون نعناع",[40,45,105]],
-["بطيخ نعناع","",[25,30,70]],
-["هيموجلوبين","فراولة + رمان + بنجر",[35,40,90]],
-["سوبر مان","موز + بلح + جرجير + كيوي",[40,45,100]],
-["هالك","افوكادو + كيوي + بلح + حلاوة + عسل",[70,80,90]],
-["ايرون مان","بلح + حلاوة + ايس كريم",[35,40,90]],
-["كات وومان","فراولة + موز + لبن",[30,35,85]],
-["كابتن امريكان","فراولة + بلح + مانجو",[35,40,90]],
-["بات مان","بلح + موز + مكسرات",[55,60,140]]
-]},
-{name:"🍇 أطباق فاكهة",items:[
-["رمانه","",[50]],
-["موزاليتا","",[50]],
-["فخفخينا ايس كريم","",[50]],
-["بوريو","",[55]],
-["سوبيا مكس","",[70]],
-["قنبلة بالايس","",[60]],
-["بطيخ قطع","",[50]],
-["قنبلة فيتامين","",[75]],
-["مانجو قطع","",[60]],
-["جامبو دايت","",[50]],
-["مصراوي","",[55]]
-]},
-];
-const tabs=document.getElementById('tabs');
-const content=document.getElementById('content');
-data.forEach((sec,i)=>{
-let b=document.createElement('button');
-b.className='tab'+(i==0?' active':'');
-b.textContent=sec.name;
-b.onclick=()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec'+i).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});};
-tabs.appendChild(b);
-let div=document.createElement('div');
-div.className='section'+(i==0?' active':'');
-div.id='sec'+i;
-let title=document.createElement('div');
-title.className='sec-title';
-title.textContent=sec.name;
-div.appendChild(title);
-sec.items.forEach(it=>{
-let card=document.createElement('div');
-card.className='card';
-let left=document.createElement('div');
-left.innerHTML='<b>'+it[0]+'</b>'+(it[1]?'<small>'+it[1]+'</small>':'');
-let pr=document.createElement('div');
-pr.className='prices';
-let labels=sec.name.includes('شرقية')?['صغير','وسط','كبير','لتر']:(it[2].length==1?['السعر']:(it[2].length==4?['صغير','وسط','كبير','لتر']:['وسط','كبير','لتر']));
-it[2].forEach((p,idx)=>{let d=document.createElement('div');d.className='price'+(it[2].length==1?' single':'');d.innerHTML='<span>'+labels[idx]+'</span><b>'+p+'</b>';pr.appendChild(d);});
-card.appendChild(left);
-card.appendChild(pr);
-let adds=document.createElement('div');
-adds.className='adds';
-it[2].forEach((p,idx)=>{let ab=document.createElement('button');ab.className='add-btn';ab.textContent='أضف '+labels[idx]+' +';ab.onclick=()=>addToCart(it[0],labels[idx],p);adds.appendChild(ab);});
-card.appendChild(adds);
-div.appendChild(card);
-});
-content.appendChild(div);
-});
-updateCart();
-</script>
+<footer>📍 El Sheikh Zayed | 📞 For orders call us<br>© 2026 VITAMIN Juice</footer>
 </body>
 </html>
