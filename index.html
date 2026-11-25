@@ -9,14 +9,12 @@
 body{background:#0a2a6b;color:#fff;padding-bottom:140px}
 header{background:#0a2a6b;text-align:center;padding:22px 14px 14px;position:sticky;top:0;z-index:10;border-bottom:3px solid #ffb400}
 .logo{width:110px;height:110px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:52px;border:4px solid #ffb400;overflow:hidden}
-.logo img{width:100%;height:100%;object-fit:cover}
 h1{font-size:32px;letter-spacing:2px}
 h1 span{color:#ffb400}
 .sub{color:#ffd966;font-size:16px;margin-top:4px}
 .info{background:#fff;color:#0a2a6b;margin:14px;border-radius:16px;padding:14px;text-align:center;line-height:1.8;font-weight:700}
 .info a{color:#0a2a6b;text-decoration:none;font-size:19px}
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;scrollbar-width:none;position:sticky;top:164px;background:#0a2a6b;z-index:9}
-.tabs::-webkit-scrollbar{display:none}
 .tab{white-space:nowrap;background:#1a4aa0;color:#fff;border:2px solid #fff3;padding:9px 16px;border-radius:999px;cursor:pointer;font-weight:800;font-size:14px}
 .tab.active{background:#ffb400;color:#0a2a6b;border-color:#ffb400}
 .section{display:none;padding:6px 14px}
@@ -90,12 +88,10 @@ document.getElementById('waLink').href='https://wa.me/201034673671?text='+msg;
 function removeItem(i){cart.splice(i,1);updateCart();}
 function openCart(){document.getElementById('cartBox').classList.add('open');}
 function closeCart(){document.getElementById('cartBox').classList.remove('open');}
-const data=[
+  const data=[
 {name:"🍹 عصائر فريش",items:[
 ["برتقال","",[25,30,65]],["جزر برتقال","",[30,35,75]],["كانتلوب","",[25,30,60]],["جوافة","",[25,30,65]],["يوسفي","",[20,25,50]],["فراولة","",[25,30,70]],["فراولة قطع وعصير","",[30,35,80]],["ليمون","",[20,25,50]],["ليمون نعناع","",[20,25,50]],["ليمون لبن","",[25,30,65]],["بطيخ","",[25,30,70]],["كيوي","",[35,40,90]],["موز","",[30,35,80]],["رمان","",[30,35,85]],["رمان حب","",[30,35,85]],["تين شوكي","",[30,35,85]],["عنب","",[30,35,85]],["بلح بلبن","",[30,35,80]],["جرجير","",[25,30,65]],["تفاح","",[30,35,80]],["برقوق","",[30,35,85]],["خوخ","",[30,35,85]],["أناناس","",[40,45,120]]]},
 {name:"🥭 مانجو",items:[
 ["مانجو","",[25,30,80]],["مانجو هاوي","مانجو + موز",[30,35,90]],["روميو وجولييت","مانجو + رمان",[30,35,90]],["شوربه عدس","مانجو + موز + ايس كريم",[35,40,100]],["مانجو توينكز","",[35,40,100]],["مانجوتشينو","مانجو + نسكافيه",[35,40,100]],["مانجو ايس كريم","",[35,40,100]],["مانجو كيوي","",[35,40,100]],["مانجو خوخ","",[35,40,100]]]},
 {name:"🥑 افوكادو",items:[
-["افوكادو بالعسل","",[60,70,180]],["افوكادو توت","",[60,70,180]],["افوكادو فراولة","",[60,70,180]],["افوكادو كيوي","",[65,75,190]],["افوكادو خوخ","",[65,75,190]],["افوكادو اناناس","",[65,75,190]],["افوكادو مانجو","",[60,70,180]],["افوكادو رمان","",[65,75,190]],["افوكادو جوز هند","",[65,75,190]],["افوكادو كاجو","",[80,90,210]],["افوكادو مكسرات","",[80,90,210]]]},
-{name:"🥤 سموثي",items:[
-["سموذي فراولة","",[30,35,
+["افوكادو بالعسل","",[60,70,180]],["افوكادو توت","",[60,70,180]],["افوكادو فراولة","",[60,70,180]],["افوكادو ك
